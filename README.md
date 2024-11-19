@@ -34,13 +34,13 @@ printf supports different format specifiers. Understanding how each works is cri
 
 Common Format Specifiers:
 
-%c: Prints a character.
-%s: Prints a string.
-%d/%i: Prints a signed integer.
-%u: Prints an unsigned integer.
-%x/%X: Prints a hexadecimal integer (lowercase/uppercase).
-%p: Prints a pointer's address in hexadecimal.
-%%: Prints a literal percent sign.
+%c: Prints a character. (ft_putchar)
+%s: Prints a string. (ft_putstr)
+%d/%i: Prints a signed integer. (ft_putnbr)
+%u: Prints an unsigned integer.(ft_putnbr and remove the part of n<0)
+%x/%X: Prints a hexadecimal integer (lowercase/uppercase). (are no how we do this ;\ ) 
+%p: Prints a pointer's address in hexadecimal. (are no how we do this ;\ )
+%%: Prints a literal percent sign. (are no how we do this ;\ )
 Parsing the Format String:
 
 Learn how to loop through the format string (const char *format) and identify format specifiers.
@@ -120,3 +120,54 @@ Implement ft_printf (Parsing Format, Handling Arguments)
 Test and Debug (Edge Cases, Thorough Testing)
 Optimize and Refine (Refactoring, Memory Efficiency)
 By following this structured approach, you’ll build up the necessary knowledge step-by-step and avoid feeling overwhelmed. If you get stuck at any point, feel free to revisit earlier stages or ask for more help on specific topics. Good luck with your ft_printf project!
+
+
+
+part 2
+
+Mandatory Steps
+Set Up Your Project Environment:
+
+Create a libftprintf.a library.
+Include a Makefile with rules: NAME, all, clean, fclean, and re.
+Organize your project into reusable .c and .h files.
+Handle Variable Arguments:
+
+Use stdarg.h for variadic functions:
+va_start, va_arg, va_copy, va_end.
+Implement Basic Conversions:
+
+%c: Prints a character. (ft_putchar)
+%s: Prints a string. (ft_putstr)
+%d/%i: Prints a signed integer. (ft_putnbr)
+%u: Prints an unsigned integer.(ft_putnbr and remove the part of n<0)
+%x/%X: Prints a hexadecimal integer (lowercase/uppercase). (are no how we do this ;\ ) 
+%p: Prints a pointer's address in hexadecimal. (are no how we do this ;\ )
+%%: Prints a literal percent sign. (are no how we do this ;\ )
+Parsing the Format String:
+
+Ensure your outputs are identical to the standard printf.
+Memory and Norm Compliance:
+
+Properly free all heap-allocated memory.
+Avoid leaks and segmentation faults.
+Adhere to the Norm for coding style.
+Testing:
+
+Write extensive test cases to verify functionality.
+Compare the results of ft_printf with the original printf.
+Bonus Features (If Mandatory Requirements Are Perfect):
+Handle flags like -, 0, ., and minimum field width.
+Implement additional flags such as #, +, and space ( ).
+What You Need to Do
+Parser Implementation:
+Write a robust parser for the format string to detect and process specifiers.
+Conversion Functions:
+Create separate functions for each specifier type (e.g., ft_print_char, ft_print_int).
+Library Creation:
+Use the ar command to bundle the functions into a library.
+Memory Management:
+Track dynamically allocated memory and free it appropriately.
+Error Handling:
+Handle invalid format strings and unsupported specifiers gracefully.
+This project will teach you about variadic functions, efficient string manipulation, and compliance with coding standards. Would you like guidance on implementing any specific part, like the parser or memory management?
