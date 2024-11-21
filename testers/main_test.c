@@ -1,6 +1,7 @@
+#include <stdio.h>
 int main()
 {
-    int result = printf("Sentence to know how many %s\n", "characters were written");
+    int result = printf("%s", NULL);
     
-    printf("%d characters were written", result);
+    printf("%d ", result);
 }

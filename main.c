@@ -18,6 +18,7 @@ int sum(int count, ...)
 
 int main()
 {
-    printf("tha sum if the variadic %d", sum(3, 22,11,2));
+    printf("tha sum if the variadic %d \n", sum(3, 22,11,2));
+    printf("%lu",sizeof(char *));
     return 0; 
 }

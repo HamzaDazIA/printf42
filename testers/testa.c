@@ -26,7 +26,7 @@ int	ft_putstr(char *str)
 
 int	ft_conversion(va_list vl, const char format)
 {
-	int	char_printed;
+	int	char_printed; 
 
 	char_printed = 0;
 	if (format == 'c')
