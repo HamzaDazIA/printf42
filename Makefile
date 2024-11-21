@@ -1,4 +1,4 @@
-SRCS =	ft_printf.c ft_putchar.c ft_putnbr.c ft_putnbr_unsignd.c
+SRCS =	ft_printf.c ft_putchar.c ft_putnbr.c ft_putnbr_unsignd.c ft_printhex.c
 		
 OBJS = ${SRCS:.c=.o}
 NAME = libftprintf.a
