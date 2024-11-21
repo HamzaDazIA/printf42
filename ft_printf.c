@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:41:59 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/21 14:29:50 by hdazia           ###   ########.fr       */
+/*   Updated: 2024/11/21 16:14:06 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,8 +41,6 @@ int ft_check_conversions(const char c,va_list p)
         how_mprint += ft_putstr(va_arg(p,char *));
     else if (c == 'd')
         how_mprint += ft_putnbr(va_arg(p,int));
-        printf(" \n%d \n", how_mprint);
-    
     return (how_mprint);
 }
 
@@ -71,9 +69,4 @@ int ft_printf(const char * counst, ...)
     }
     return (how_mprint);
 }
-
-int main()
-{
-    int r = ft_printf("%d ",1000);
-    //printf(" \n%d ", r);
-}   
+ 
