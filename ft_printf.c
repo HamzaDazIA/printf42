@@ -6,18 +6,11 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:41:59 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/21 13:40:48 by hdazia           ###   ########.fr       */
+/*   Updated: 2024/11/21 14:29:50 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
-#include <stdarg.h>
-
-int	ft_putchar(char c)
-{
-	write(1, &c, 1);
-    return (1);
-}
 
 int ft_putstr(char *s)
 {
@@ -39,21 +32,25 @@ int ft_putstr(char *s)
 
 int ft_check_conversions(const char c,va_list p)
 {
-    size_t  how_mprint;
+    int  how_mprint;
 
     how_mprint = 0;
     if (c == 'c')
         how_mprint += ft_putchar(va_arg(p,int));
-    if (c == 's')
+    else if (c == 's')
         how_mprint += ft_putstr(va_arg(p,char *));
+    else if (c == 'd')
+        how_mprint += ft_putnbr(va_arg(p,int));
+        printf(" \n%d \n", how_mprint);
+    
     return (how_mprint);
 }
 
 int ft_printf(const char * counst, ...)
 {
     va_list p;
-    size_t  i;
-    size_t  how_mprint;
+    int  i;
+    int  how_mprint;
     
     how_mprint = 0;
     i = 0;
@@ -63,7 +60,13 @@ int ft_printf(const char * counst, ...)
         if (counst[i] == '%')
         {
             how_mprint += ft_check_conversions(counst[i + 1],p);
+            i++;
         }
+        else
+        {
+            how_mprint += ft_putchar(counst[i]);
+        }
+        va_end(p);
         i++;
     }
     return (how_mprint);
@@ -71,6 +74,6 @@ int ft_printf(const char * counst, ...)
 
 int main()
 {
-    int r = ft_printf("%s",NULL);
-    printf("%d", r);
+    int r = ft_printf("%d ",1000);
+    //printf(" \n%d ", r);
 }   

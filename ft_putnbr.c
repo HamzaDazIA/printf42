@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   libftprintf.h                                      :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/11/20 17:41:52 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/21 14:22:47 by hdazia           ###   ########.fr       */
+/*   Created: 2024/11/21 13:59:45 by hdazia            #+#    #+#             */
+/*   Updated: 2024/11/21 14:57:21 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRINTF_H
-# define FT_PRINTF_H
+#include "libftprintf.h"
 
-#include <stdlib.h>
-#include <stdarg.h>
-#include <unistd.h>
-#include <stdio.h>
-
-int ft_printf(const char * counst, ...);
-int	ft_putnbr(int n);
-int	ft_putchar(char c);
-
-#endif
+int	ft_putnbr(int n)
+{
+	long	nb;
+    int  how_mprint;
+    
+    how_mprint = 0;
+	nb = n;
+	if (nb < 0)
+	{
+		write(1, "-", 1);
+        how_mprint += 1;
+		nb *= -1;
+	}
+	if (nb > 9)
+	{
+		how_mprint += ft_putnbr(nb / 10);
+		how_mprint += ft_putchar((nb % 10) + '0');
+	}
+	else
+		how_mprint += ft_putchar(nb + '0');
+    return (how_mprint);
+}
