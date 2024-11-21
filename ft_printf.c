@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:41:59 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/21 16:14:06 by hdazia           ###   ########.fr       */
+/*   Updated: 2024/11/21 16:36:59 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,12 @@ int ft_check_conversions(const char c,va_list p)
         how_mprint += ft_putchar(va_arg(p,int));
     else if (c == 's')
         how_mprint += ft_putstr(va_arg(p,char *));
-    else if (c == 'd')
+    else if (c == 'd' || c == 'i')
         how_mprint += ft_putnbr(va_arg(p,int));
+    else if (c == 'u')
+        how_mprint += ft_putnbr_unsignd(va_arg(p,unsigned int));
+    else if (c == '%')
+        how_mprint += ft_putchar('%');
     return (how_mprint);
 }
 
