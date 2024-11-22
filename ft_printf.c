@@ -6,23 +6,23 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:41:59 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/22 17:16:18 by hdazia           ###   ########.fr       */
+/*   Updated: 2024/11/22 17:31:39 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int	fail_check(int	i)
+int	fail_check(int i)
 {
 	if (i < 0)
 		return (-1);
 	return (i);
 }
 
-int	ft_check_conversions(const char	c, va_list	p)
+int	ft_check_conversions(const char c, va_list p)
 {
 	int	how_mprint;
-    
+
 	how_mprint = 0;
 	if (c == 'c')
 		how_mprint += ft_putchar(va_arg(p, int));
@@ -33,7 +33,7 @@ int	ft_check_conversions(const char	c, va_list	p)
 	else if (c == 'u')
 		how_mprint += ft_putnbr_unsignd(va_arg(p, unsigned int));
 	else if (c == '%')
-	   	how_mprint += ft_putchar('%');
+		how_mprint += ft_putchar('%');
 	else if (c == 'X' || c == 'x')
 		how_mprint += ft_printhex(va_arg(p, int), c);
 	else if (c == 'p')
@@ -43,12 +43,12 @@ int	ft_check_conversions(const char	c, va_list	p)
 
 int	ft_printf(const char *counst, ...)
 {
-    va_list p;
-	int     i;
-	int     how_mprint;
-    
-    if (write(1, 0, 0) == -1)
-        return (-1);
+	va_list	p;
+	int		i;
+	int		how_mprint;
+
+	if (write(1, 0, 0) == -1)
+		return (-1);
 	how_mprint = 0;
 	i = 0;
 	va_start(p, counst);
@@ -60,9 +60,7 @@ int	ft_printf(const char *counst, ...)
 			i++;
 		}
 		else
-		{
 			how_mprint += ft_putchar(counst[i]);
-		}
 		i++;
 	}
 	va_end(p);

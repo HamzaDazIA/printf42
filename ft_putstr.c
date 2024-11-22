@@ -6,26 +6,26 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/22 09:00:13 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/22 10:41:58 by hdazia           ###   ########.fr       */
+/*   Updated: 2024/11/22 17:37:19 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_putstr(char *s)
+int	ft_putstr(char *s)
 {
 	unsigned int	i;
-    
+
 	i = 0;
-    if (!s)
-    {
-        ft_putstr("(null)");
-        return (6);
-    }
+	if (!s)
+	{
+		ft_putstr("(null)");
+		return (6);
+	}
 	while (s[i] != '\0')
 	{
 		ft_putchar(s[i]);
 		i++;
 	}
-    return (i);
+	return (i);
 }

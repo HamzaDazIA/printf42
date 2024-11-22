@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:25:51 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/22 10:41:42 by hdazia           ###   ########.fr       */
+/*   Updated: 2024/11/22 17:34:48 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,9 +15,9 @@
 int	ft_putnbr_unsignd(unsigned int n)
 {
 	long	nb;
-    int  how_mprint;
-    
-    how_mprint = 0;
+	int		how_mprint;
+
+	how_mprint = 0;
 	nb = n;
 	if (nb > 9)
 	{
@@ -26,5 +26,5 @@ int	ft_putnbr_unsignd(unsigned int n)
 	}
 	else
 		how_mprint += ft_putchar(nb + '0');
-    return (how_mprint);
+	return (how_mprint);
 }
