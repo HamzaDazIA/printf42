@@ -6,32 +6,25 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:50:21 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/22 07:02:06 by hdazia           ###   ########.fr       */
+/*   Updated: 2024/11/22 12:36:19 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
-int	ft_printhex(int n, char c)
+int ft_printhex(unsigned int nb, char c)
 {
-	long	nb;
-    int  how_mprint;
-    
-    how_mprint = 0;
-	nb = n;
-	if (nb >= 16)
-	{
-		how_mprint += ft_printhex((nb / 16),c);
-		how_mprint += ft_printhex((nb % 16),c);
-	}
-	else if (nb >= 9)
-    {
-        if (c == 'x')
-		    how_mprint += ft_putchar((nb - 10) + 'a');
-        else
-            how_mprint += ft_putchar((nb - 10) + 'A');
-    }
+    char *hex;
+    int how_mprintf;
+
+    how_mprintf = 0;
+    if (c == 'X')
+        hex = "0123456789ABCDEF";
     else
-        how_mprint += ft_putchar(nb + '0');
-    return (how_mprint);
+        hex = "0123456789abcdef";
+    
+    if (nb >= 16)
+        how_mprintf += ft_printhex(nb / 16, c);
+    how_mprintf += ft_putchar(hex[nb % 16]);
+    return (how_mprintf);
 }
