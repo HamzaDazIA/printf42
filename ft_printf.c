@@ -6,12 +6,18 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/20 17:41:59 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/21 20:17:57 by hdazia           ###   ########.fr       */
+/*   Updated: 2024/11/22 07:02:16 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
+int fail_check(int i)
+{
+    if (i < 0)
+        return (-1);
+    return (i);
+}
 int ft_putstr(char *s)
 {
 	unsigned int	i;
@@ -56,6 +62,7 @@ int ft_printf(const char * counst, ...)
     int  i;
     int  how_mprint;
     
+    
     how_mprint = 0;
     i = 0;
     va_start(p,counst);
@@ -73,6 +80,7 @@ int ft_printf(const char * counst, ...)
         va_end(p);
         i++;
     }
+    how_mprint = fail_check(how_mprint);
     return (how_mprint);
 }
  

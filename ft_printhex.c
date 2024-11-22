@@ -6,7 +6,7 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:50:21 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/21 20:16:23 by hdazia           ###   ########.fr       */
+/*   Updated: 2024/11/22 07:02:06 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,8 +32,6 @@ int	ft_printhex(int n, char c)
             how_mprint += ft_putchar((nb - 10) + 'A');
     }
     else
-    {
         how_mprint += ft_putchar(nb + '0');
-    }
     return (how_mprint);
 }

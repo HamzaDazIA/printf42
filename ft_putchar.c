@@ -6,14 +6,13 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 14:10:42 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/21 19:58:07 by hdazia           ###   ########.fr       */
+/*   Updated: 2024/11/22 07:03:36 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libftprintf.h"
 
-int	ft_putchar(char c)
+int ft_putchar(char c)
 {
-	write(1, &c, 1);
-    return (1);
+	return (write(1, &c, 1));
 }
