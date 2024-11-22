@@ -6,11 +6,11 @@
 /*   By: hdazia <hdazia@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/11/21 16:25:51 by hdazia            #+#    #+#             */
-/*   Updated: 2024/11/22 07:01:55 by hdazia           ###   ########.fr       */
+/*   Updated: 2024/11/22 10:41:42 by hdazia           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libftprintf.h"
+#include "ft_printf.h"
 
 int	ft_putnbr_unsignd(unsigned int n)
 {
