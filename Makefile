@@ -7,6 +7,9 @@ CC = cc
 RM = rm -f
 CFLAGS = -Wall -Wextra -Werror
 
+%.o : %.c ft_printf.h
+	${CC} ${CFLAGS} -c $< -o $@
+
 ${NAME}: ${OBJS}
 	${LIBC} ${NAME} ${OBJS}
 
@@ -19,7 +22,5 @@ fclean: clean
 	${RM} ${NAME}
 
 re: fclean all
-
-r: all clean
 
 .PHONY : all clean fclean re
