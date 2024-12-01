@@ -113,10 +113,3 @@ make
    - No, buffer management of the original `printf` is not required.
 
 ---
-
-## 📝 Author
-(Add your name, GitHub profile, or any other relevant details here.)
-
---- 
-
-Let me know if you need any additional customization!
