@@ -111,5 +111,3 @@ make
 
 3. **Do I need to manage the output buffer?**
    - No, buffer management of the original `printf` is not required.
-
----
